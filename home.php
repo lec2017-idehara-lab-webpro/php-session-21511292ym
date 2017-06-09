@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,14 +23,22 @@ if(isset($_POST['id'],$_POST['pass']) && strlen($_POST['id'])>0 )
 {
   $id = $_POST['id'];
   $pass = $_POST['pass'];
+    
   if(isset($login[$id]) && $login[$id]['pass'] == $pass)
+  {
     print('Welcome');
-  else {
+      $_SESSION['id'] = $id;
+      $_SESSION['name'] = $login[$id]['name'];
+      
+      //var_dump($_SESSION);
+  }
+  else 
+  {
     print('Wrong Password');
+     
   }
 }
-
-$name = ''; // ここ書き換え
+$name = $login[$id]['name']; //ここ書き換え
 print('<hr />');
 print($name . "さんでログイン中");
 

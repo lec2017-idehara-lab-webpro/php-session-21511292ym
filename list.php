@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,6 +11,7 @@
     <h1>書き込み一覧ページ</h1>
 
 <?php
+ var_dump($_SESSION);
   $name = ''; // ここ書き換え
   print($name . "さんでログイン中");
  ?>
