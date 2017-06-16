@@ -11,8 +11,8 @@
     <h1>書き込み一覧ページ</h1>
 
 <?php
- var_dump($_SESSION);
-  $name = ''; // ここ書き換え
+ //var_dump($_SESSION);
+  $name = $_SESSION['name']; // ここ書き換え
   print($name . "さんでログイン中");
  ?>
   </body>
